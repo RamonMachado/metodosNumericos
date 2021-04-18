@@ -25,8 +25,8 @@ def calculate(pontos, x=None):
     return sum
 
 
-pontos = [ [2, 0.3010299957], [3, 0.4771212547] ]
-x = 2.4
+pontos = [ [0,0], [5, 27], [10, 27], [15, 54], [20, 54]]
+x = 7
 
 polinomio = calculate(pontos)
 resultado = calculate(pontos, 2.4)

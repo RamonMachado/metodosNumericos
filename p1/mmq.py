@@ -44,22 +44,31 @@ def printar_resultado(matriz_resultado):
         print(f'{letra} = {valor}')
         letra = chr(ord(letra) + 1)
 
+def calcular_funcao(matriz_resultado, x):
+    array_resultado = matriz_resultado[::-1] 
+    resultado = 0
+    for i, valor in enumerate(array_resultado):
+        resultado += valor*(x**i)
+    return resultado
+
+
 def resolver_lista():
-    pontos = [ [-8, 1.06635918], [-5.71428571, 0.80014487], [-3.42857143, 0.64216079], [-1.14285714, 0.54170856], [1.14285714, 0.44962931], [3.42857143, 0.39317197], [5.71428571, 0.33772819], [8, 0.31377657] ]
+    pontos = [ [0,0], [5, 27], [10, 27], [15, 54], [20, 54] ]
 
     functions = [
-                 lambda x: x**3,
-                 lambda x: x**2,
-                 lambda x: x
+                 lambda x: x,
+                 lambda x: 1
                 ]
 
     matrixA = criar_matriz_A(pontos, functions)
     matrixB = criar_matriz_B(pontos, functions)
     resultMatrix = np.linalg.solve(matrixA, matrixB)
-    
+
     print(f'Matriz A: {matrixA}')
     print(f'Matriz B: {matrixB}')
     print(f'Matriz Resultado: {resultMatrix}')
     printar_resultado(resultMatrix)
+    resultadoFuncao =calcular_funcao(resultMatrix, 7)
+    print(f'Resltado de 7 = {resultadoFuncao}')
 
 resolver_lista()

@@ -1,8 +1,7 @@
 #Created by Ramon Machado de Almeida in 07/03/2021
 import numpy as np
 
-pontos = [ [0.50, -2.80], [0.75, -0.60], [1, 1], [1.5, 3.2], [2, 4.8] ]
-pontos2 = [ [-2, 4], [-1, 1], [2, -1], [0.5, 0] ]
+pontos = [ [0,0], [5, 27], [10, 27], [15, 54], [20, 54]]
 
 def criar_matriz_A(pontos):
     n = len(pontos)
@@ -47,7 +46,7 @@ def polinomio_interpolador_por_sistema_linear(pontos):
 
     print(variablesDict)
 
-    valor = -0.5
+    valor = 7
     resultado = 0
     for index in range(len(resultMatrix)):
         resultado += variablesDict[f'a{index}'] * np.power(valor, index)
